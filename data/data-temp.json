@@ -1,0 +1,186 @@
+
+{
+  "projectName": "Ten Daze",
+  "teamName": "담다디 뭐시기",
+  "developers": ["양준석", "백승훈", "김민규", "고동연"],
+  "contestInfo": {
+    "type": 1, // 디콘
+    "subType": 1, // 응용 SW 부문
+    "rate": 1, // 대상
+    "year": 2017
+  },
+  "qualification": [{
+    "title" : "개발 환경",
+    "contents": [{
+      "title": "OS",
+      "content": "Microsoft Windows 10"
+    }, {
+      "title": "플랫폼",
+      "content": "Intel(R) Core(TM) i5-5257U CUP 2.70GHz / RAM 8G"
+    }, {
+      "title": "프로그래밍 제작 툴",
+      "content": "Microsoft Visual Studio C++ 2015"
+    }, {
+      "title": "그래픽 프로그램",
+      "content": "Adobe Photoshop CC"
+    }, {
+      "title": "기타 도구",
+      "content": "RGEngine_2016_1.1.1 (동아리 프레임워크)"
+    }]
+  }, {
+    "title": "사용환경",
+    "contents" : [{
+      "title": "OS",
+      "content": "Microsoft Windows 7, Windows 10"
+    }, {
+      "title": "플랫폼",
+      "content": "I5 3세대, 4GB"
+    }, {
+      "title": "기타",
+      "content": "DirectX SDK June 2010"
+    }]
+  }],
+  "overview": "2016년 11월 디지털 ~ 이거 복사 안되는거실화? 중간중간 굵은글씨는 <b>ㅁㄴㅇ</b>이런식으로 ㄱ",
+  "description": "[{img-1} 버티기]  asdasd"
+}
+
+{
+  "projectName": "구해줘! 펭귄",
+  "teamName": "펭귄 마이쪙",
+  "developers": ["김찬영", "이로운", "김동규", "조우진", "홍초희"],
+  "contestInfo": {
+    "type": 1, // 디콘
+    "subType": 1, // 응용 SW 부문
+    "rate": 2, // 금상
+    "year": 2017
+  },
+  "qualification": [{
+    "title" : "개발 환경",
+    "contents": [{
+      "title": "OS",
+      "content": "Microsoft Windows 10"
+    }, {
+      "title": "플랫폼",
+      "content": "Intel Core i5-6300HQ / 4G"
+    }, {
+      "title": "프로그래밍 제작 툴",
+      "content": "Microsoft Visual Studio C++ 2017"
+    }, {
+      "title": "그래픽 프로그램",
+      "content": "Adobe Photoshop CS6, 일러레"
+    }, {
+      "title": "기타 도구",
+      "content": "ZeroEngine(동아리 자체 엔진), DirectX9"
+    }]
+  }, {
+    "title": "사용환경",
+    "contents" : [{
+      "title": "OS",
+      "content": "Microsoft Windows 7, Windows 10"
+    }, {
+      "title": "플랫폼",
+      "content": "Intel Core i5-6300HQ / 4GB"
+    }, {
+      "title": "기타",
+      "content": "DirectX9"
+    }]
+  }],
+  "overview": "이 게임은 남극에서 북극으로 가버렸~",
+  "description": "[{img-1} 메인화면] 게임의 메인화면은 게임의 ~"
+}
+
+{
+  "projectName": "SRSimulator",
+  "teamName": "일후니",
+  "developers": ["김현", "이일훈", "김도언", "김택서", "김연준"],
+  "contestInfo": {
+    "type": 1, // 디콘
+    "subType": 2, // 웹콘텐츠 부문
+    "rate": 1, // 대상
+    "year": 2017
+  },
+  "qualification": [{
+    "title" : "웹호스팅",
+    "contents": [{
+      "title": "웹호스팅 서비스 업체",
+      "content": "Hostinger"
+    }, {
+      "title": "홈페이지 주소",
+      "content": "iwin247.info:4000"
+    }, {
+      "title": "Web Server",
+      "content": ""
+    }, {
+      "title": "Server-side Language",
+      "content": "Node.js(express.js)"
+    }, {
+      "title": "DBMS",
+      "content": "mongodb"
+    }, {
+      "title": "기타",
+      "content": "moment.js babel"
+    }]
+  }, {
+    "title": "개발도구",
+    "contents" : [{
+      "title": "텍스트에디터",
+      "content": "Atom.io"
+    }, {
+      "title": "그래픽  프로그램",
+      "content": "three.js, Autodesk SketchBook(App), Maya, 3ds Max"
+    }, {
+      "title": "게시판, 회원 프로그램",
+      "content": ""
+    }, {
+      "title": "기타 도구",
+      "content": ""
+    }]
+  }],
+  "overview": "다음과 같은 콘텐츠를 선정한 이유는 ~",
+  "description": "[{img-1} 스토리보드] [{img-2} 로그인 화면] 위 페이지에서는 ~"
+}
+
+{
+  "projectName": "Cat Of The Storm",
+  "teamName": "고양이가 신청했어요",
+  "developers": ["김영남", "노영진", "박정현"],
+  "contestInfo": {
+    "type": 2, // 모콘
+    "subType": 1, // 게임 부문
+    "rate": 1, // 대상
+    "year": 2017
+  },
+  "qualification": [{
+    "title" : "개발 환경",
+    "contents": [{
+      "title": "OS",
+      "content": "Windows 10, Windows 8"
+    }, {
+      "title": "플랫폼",
+      "content": "Intel i5-3570 (i7-5500U) / RAM 8G"
+    }, {
+      "title": "프로그래밍 제작 툴",
+      "content": "Client : Visual Studio 2015, 2013 / Brackets 1.9.0"
+    }, {
+      "title": "그래픽 프로그램",
+      "content": "Adobe Photoshop CS6"
+    }, {
+      "title": "기타 도구",
+      "content": "Unity 2017.1.0f3"
+    }]
+  }, {
+    "title": "사용환경",
+    "contents" : [{
+      "title": "OS",
+      "content": "Android 7.0"
+    }, {
+      "title": "플랫폼",
+      "content": "CPU : Samsung Exynos 9 / RAM : 6G"
+    }, {
+      "title": "기타",
+      "content": ""
+    }]
+  }],
+  "overview": "현재 모바일 게임 시장은 ~",
+  "description": "[{img-1} 메인화면]온라인 내에서 사용될~ [{img-2} 인게임 화면]광장에서는 ~"
+}
