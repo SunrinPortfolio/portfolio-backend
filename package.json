@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "build": "babel server --out-dir build/server && babel data --out-dir build/data",
+    "start": "npm run build && node ./build/server/app.js"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
