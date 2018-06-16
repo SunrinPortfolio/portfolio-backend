@@ -3,7 +3,7 @@ import path from 'path';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 
-import routerIndex from './routes/index';
+import apiRouter from './routes/api';
 
 var app = express();
 
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routerIndex);
+app.use('/', apiRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -24,7 +24,9 @@ app.use((req, res, next) => {
 });
 
 const server = app.listen(port, () => {
-    console.log('Express listening on port', port);
+  console.log('');
+  console.log(`Listening on ${port}`);
+  console.log('');
 });
 
 module.exports = app;
