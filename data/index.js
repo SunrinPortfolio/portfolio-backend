@@ -12,13 +12,9 @@ import softwareDivfullData from './software';
 const fullData = { 2: softwareDivfullData };
 
 const search = (Data, projectName, developer, contestInfo) => {
-  console.dir(contestInfo);
   const data = Data.filter((item) => {
-    console.log(item.projectName);
     if (String(item.projectName).indexOf(projectName) < 0) return false;
     if ((item.developers.filter((item) => String(item).indexOf(developer) >= 0)).length === 0) return false;
-
-    console.dir(item.contestInfo);
 
     if (contestInfo.type.main !== undefined && contestInfo.type.main != item.contestInfo.type.main) return false;
     if (contestInfo.type.sub !== undefined && contestInfo.type.sub != item.contestInfo.type.sub) return false;
