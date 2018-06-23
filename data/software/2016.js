@@ -2,7 +2,7 @@ export default [
   {
     projectName: "KKiro3D",
     teamName: "우리가만든것우리가쓰자",
-    developers: ["유덕남", "백승훈", "김민규", "고동연"],
+    developers: ["유덕남"],
     contestInfo: {
       type: {
         main: 1,

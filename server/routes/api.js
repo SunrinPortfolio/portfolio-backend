@@ -5,7 +5,7 @@ import Data from '../../data/index';
 const router = express.Router();
 
 
-router.get('/list/:division', (req, res, next) => {
+router.get('/list/:division', (req, res) => {
   const queryContestInfo = {
     type: {
       main: req.query.type,
