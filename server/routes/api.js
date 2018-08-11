@@ -14,6 +14,7 @@ router.get('/list/:division', (req, res) => {
     rate: req.query.rate,
     year: req.query.year,
   };
+  res.set({ 'Access-Control-Allow-Origin': '*' });
   res.json(Data.search(req.params.division, req.query.name || "", req.query.developer || "", queryContestInfo));
   res.end();
 });
