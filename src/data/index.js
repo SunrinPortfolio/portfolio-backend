@@ -7,14 +7,23 @@
 // 선린톤 - 1 게임, 2 생활
 // rate : 1 대상, 2 금상 ( 선린톤은 1 금상 )
 
+import getDescription from './getDescription';
+import contestInfoToString from './contestInfoToString';
+
 import softwareDivfullData from './software';
 
 const fullData = [
-  ...softwareDivfullData.map((item, index ) => Object.assign(item, { id: Number(index + 1), division: 2 }))
-  // ...anotherDivfullData.map((item, index ) => Object.assign(item, { id: Number(index + 1 + softwareDivFullData.length), division: divisionCode }))
-];
+  ...softwareDivfullData.map(item => Object.assign(item, { division: 2 })),
+  // ...anotherDivfullData.map(item => Object.assign(item, { division: divisionCode })),
+].map((item, index) => Object.assign(item,
+  {
+    id: index + 1,
+    getDescription: getDescription.bind(null, item),
+    getContestInfoByString: contestInfoToString.bind(null, item),
+  }
+));
 
-const search = (division, { id = 0, projectName, developer, contestInfo }, reduceFunc) => {
+const search = (division, { id = 0, projectName, developer, contestInfo }, processFunc) => {
   return new Promise((resolve, _) => {
 
     // if division is 0, search from all data
@@ -37,17 +46,12 @@ const search = (division, { id = 0, projectName, developer, contestInfo }, reduc
       }
 
       return true;
-    }).map(item => reduceFunc ? reduceFunc(item) : item);
+    }).map(item => processFunc ? Object.assign(item, processFunc(item)) : item);
     
     resolve(result);
   });
 };
 
-const searchAPI = (division, query, reduceFunc) => search(division ? division : 0, query, reduceFunc);
+const searchAPI = (division, query, processFunc) => search(division ? division : 0, query, processFunc);
 
-export default {
-  divisionDict: {
-    2: 'software',
-  },
-  search: searchAPI,
-};
+export default searchAPI;

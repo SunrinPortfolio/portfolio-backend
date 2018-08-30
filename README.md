@@ -2,11 +2,13 @@
 
 > Sunrin Internet High School Software Division Portfolio Site
 
-서버 실행 명령어: `npm start`
+서버 빌드 명령어: `npm build`
 
-## API 호출
+서버 실행 명령어: `npm start` (실행 전 자동 빌드)
 
-기본 URL: /api/list/\[학과]
+## API 호출 (목록)
+
+URL: /api/list?division=[학과]
 
 \[학과]에 넣을 수 있는 값: int(1~4)
 
@@ -30,7 +32,7 @@
 값(year)   | 설명
 ---------- | --------------------
 2017       | 2017년의 데이터 요청
-
+2016       | 2016년의 데이터 요청
 ---
 
 `/?type=[대회종류]`
@@ -43,6 +45,7 @@
 ------- | ----------------------
 1       | 디지털 콘텐츠 경진대회
 2       | 모바일 콘텐츠 경진대회
+3       | 선린 해커톤
 
 ---
 
@@ -52,10 +55,11 @@
 
 [계열]에 넣을 수 있는 값: int(1~2)
 
-값(int) | 설명
-------- | ----
-1       | 게임
-2       | 생활
+값(int) | 설명(모콘, 선린톤) | 설명 (디콘)
+------- | -------------------| ----
+1       | 게임               | 응용
+2       | 생활               | 웹 콘텐츠
+3       | -                  | 멀티미디어
 
 type 옵션이 있어야만 작동함.
 
@@ -67,12 +71,10 @@ type 옵션이 있어야만 작동함.
 
 [상종류]에 넣을 수 있는 값: int(1~4)
 
-값(int) | 설명
-------- | ----
-1       | 대상
-2       | 금상
-3       | 은상
-4       | 동상
+값(int) | 설명 (디콘, 모콘) | 설명 (선린톤)
+------- | ----------------- | -------------
+1       | 대상              | 금상
+2       | 금상              |
 
 ---
 
@@ -94,49 +96,53 @@ type 옵션이 있어야만 작동함.
 
 ```json
 {
-  "projectName": "Ten Daze",
-  "teamName": "담다디담다디담다디담 담다디다담 다다담",
-  "developers": ["양준석", "백승훈", "김민규", "고동연"],
+  "projectName": "작품명",
+  "teamName": "팀명",
+  "developers": ["홍길동", "철수", "영희"],
   "contestInfo": {
-    "type": {
-      "main": 1,
-      "sub": 1
-    },
-    "rate": 1,
-    "year": 2017
+    "year": 2017,
+    "contest": "디지털 콘텐츠 경진대회",
+    "field": "응용",
+    "rate": "대상"
   },
-  "qualification": [{
-    "title": "개발 환경",
-    "contents": [{
-      "title": "OS",
-      "content": "Microsoft Windows 10"
-    }, {
-      "title": "플랫폼",
-      "content": "Intel(R) Core(TM) i5-5257U CPU 2.70GHz / RAM 8G"
-    }, {
-      "title": "프로그래밍 제작 툴",
-      "content": "Microsoft Visual Studio C++ 2015"
-    }, {
-      "title": "그래픽 프로그램",
-      "content": "Adobe Photoshop CC"
-    }, {
-      "title": "기타 도구",
-      "content": "RGEngine_2016_1.1.1 (동아리 프레임워크)"
-    }]
-  }, {
-    "title": "사용환경",
-    "contents": [{
-      "title": "OS",
-      "content": "Microsoft Windows 7, Windows 10"
-    }, {
-      "title": "플랫폼",
-      "content": "I5 3세대, 4GB"
-    }, {
-      "title": "기타",
-      "content": "DirectX SDK June 2010"
-    }]
-  }],
-  "overview": "2016년 11월 디지털 콘텐츠 경진대회 당시, 어느 한 팀의 기획자 밑에서 프로그래머로 ~",
-  "description": "[img-1]{메인 화면}게임시작, 게임방법, 수집품 3개의 버튼을 ~"
+  "qualification": [
+    {
+      "title": "개발 환경",
+      "contents": [
+        {
+          "title": "OS",
+          "content": "Microsoft Windows 10"
+        },
+        {
+          "title": "플랫폼",
+          "content": "Intel(R) Core(TM) i5-5257U CPU 2.70GHz / RAM 8G"
+        }
+      ]
+    }
+  ],
+  "overview": "2018년 8월 디지털 콘텐츠 경진대회 ~",
+  "division": 2,
+  "id": 1
 }
+```
+
+## API 호출 (세부설명(MD) 요청 )
+
+URL: /api/description?id=[id]
+
+\[id]에 넣을 수 있는 값: list 요청시 전송된 데이터에 들어있는 id값
+
+### 반환 데이터 예시
+
+images엔 이미지 url이 자동으로 바인딩 될 에정이나, 아직 이미지 데이터를 뽑지 못함
+
+```md
+# 작품명
+
+## 메인 화면
+
+![메인 화면](images/1)
+
+메인화면입니다.
+
 ```

@@ -1,7 +1,7 @@
-import express from 'express';
-import fs from 'fs';
 
-import Data from '../../data/index';
+import express from 'express';
+
+import Search from '../../data/index';
 
 const router = express.Router();
 
@@ -9,7 +9,7 @@ const router = express.Router();
 router.get('/list', (req, res) => {
   res.set({ 'Access-Control-Allow-Origin': '*' });
 
-  Data.search(
+  Search(
     req.query.division,
     {
       projectName: req.query.name || "",
@@ -23,15 +23,7 @@ router.get('/list', (req, res) => {
         year: req.query.year,
       }
     },
-    item => ({
-      projectName: item.projectName, 
-      teamName: item.teamName,
-      developers: item.developers,
-      contestInfo: item.contestInfo,
-      qualification: item.qualification,
-      id: item.id,
-      division: item.division,
-    })
+    item => ({ contestInfo: item.getContestInfoByString() })
   ).then(data => {
     res.json(data);
     res.end();
@@ -41,7 +33,7 @@ router.get('/list', (req, res) => {
 router.get('/detail', (req, res) => {
   res.set({ 'Access-Control-Allow-Origin': '*' });
 
-  Data.search(null, { id: Number(req.query.id ? req.query.id : 0) })
+  Search(null, { id: Number(req.query.id ? req.query.id : 0) })
     .then(data => {
       if (data.length === 0) res.json({ });
       else {
@@ -56,17 +48,15 @@ router.get('/detail', (req, res) => {
 router.get('/description', (req, res) => {
   res.set({ 'Access-Control-Allow-Origin': '*' });
 
-  Data.search(null, { id: Number(req.query.id ? req.query.id : 0) })
+  Search(null, { id: Number(req.query.id ? req.query.id : 0) })
     .then(data => {
       const item = data[0];
-      const path = __dirname + `/../../../src/data/${Data.divisionDict[item.division]}/${item.contestInfo.year}/`;
 
-      const projectName = String(item.projectName.replace(/\s/gi, '_'));
-
-      fs.readFile(path + projectName + '/description.md', 'utf8', (err, content) => {
-        res.send(content);
-        res.end();
-      });
+      return item.getDescription();
+    })
+    .then(data => {
+      res.send(data);
+      res.end();
     });
 })
 
