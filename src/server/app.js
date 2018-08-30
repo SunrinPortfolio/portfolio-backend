@@ -9,7 +9,7 @@ import apiRouter from './routes/api';
 
 const app = express();
 
-const port = 3000;
+const port = 80;
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
