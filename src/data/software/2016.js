@@ -102,7 +102,7 @@ export default [{
   {
     projectName: "srNow & srHome",
     teamName: "srDevelopers",
-    developers: ["진상현", "오준석", "김태윤", "박종운"],
+    developers: ["구창림", "진상현", "오준석", "김태윤", "박종운"],
     contestInfo: {
       type: {
         main: 1,
@@ -146,6 +146,56 @@ export default [{
       }, {
         title: "기타 도구",
         content: "Git, Android Studio"
+      }]
+    }]
+  },
+  {
+    projectName: "Clothup",
+    teamName: "CU(ClothUp) tomorrow",
+    developers: ["김주용", "방진형", "방진성", "이예진", "이예림"],
+    contestInfo: {
+      type: {
+        main: 1,
+        sub: 2
+      },
+      rate: 3,
+      year: 2016
+    },
+    qualification: [{
+      title: "웹호스팅",
+      contents: [{
+        title: "웹호스팅 서비스 업체",
+        content: "Conoha(Virtual Server)"
+      }, {
+        title: "홈페이지 주소",
+        content: "http://clothup.me"
+      }, {
+        title: "Web Server",
+        content: "Apache"
+      }, {
+        title: "Server-side Language",
+        content: "Python"
+      }, {
+        title: "DBMS",
+        content: "SQLite3"
+      }, {
+        title: "기타",
+        content: ""
+      }]
+    }, {
+      title: "개발도구",
+      contents: [{
+        title: "텍스트에디터",
+        content: "Sublime Text 3"
+      }, {
+        title: "그래픽 프로그램",
+        content: "Adobe Photoshop CC, Adobe Illustrator CC, Adobe Premiere Pro CC"
+      }, {
+        title: "게시판, 회원 프로그램 (프레임워크 포함)",
+        content: "CSS Framework: Materialize / Server Framework: Django / JavaScript Framework: jQuery"
+      }, {
+        title: "기타 도구",
+        content: ""
       }]
     }]
   }

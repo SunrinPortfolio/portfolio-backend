@@ -5,7 +5,7 @@
 // 디콘 - 1 응용, 2 웹콘텐츠, 3 멀티미디어
 // 모콘 - 1 게임, 2 생활
 // 선린톤 - 1 게임, 2 생활
-// rate : 1 대상, 2 금상 ( 선린톤은 1 금상 )
+// rate : 1 대상, 2 금상, 3 은상 ( 선린톤은 1 금상 )
 
 import getDescription from './getDescription';
 import contestInfoToString from './contestInfoToString';
