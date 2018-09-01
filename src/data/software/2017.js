@@ -85,7 +85,7 @@ export default [
         title: "기타",
         content: "DirectX9"
       }]
-    }],
+    }]
   },
   {
     projectName: "나 잡아봐라",
