@@ -98,5 +98,55 @@ export default [{
         content: "JQuery, Animated.css"
       }]
     }]
+  },
+  {
+    projectName: "srNow & srHome",
+    teamName: "srDevelopers",
+    developers: ["진상현", "오준석", "김태윤", "박종운"],
+    contestInfo: {
+      type: {
+        main: 1,
+        sub: 2
+      },
+      rate: 2,
+      year: 2016
+    },
+    qualification: [{
+      title: "웹호스팅",
+      contents: [{
+        title: "웹호스팅 서비스 업체",
+        content: "https://www.phps.kr"
+      }, {
+        title: "홈페이지 주소",
+        content: "https://iori.kr"
+      }, {
+        title: "Web Server",
+        content: "Nginx(CentOS 6)"
+      }, {
+        title: "Server-side Language",
+        content: "Node.js"
+      }, {
+        title: "DBMS",
+        content: "MongoDB"
+      }, {
+        title: "기타",
+        content: ""
+      }]
+    }, {
+      title: "개발도구",
+      contents: [{
+        title: "텍스트에디터",
+        content: "Vim"
+      }, {
+        title: "그래픽 프로그램",
+        content: "Adobe Photoshop CC, Adobe Illustrator CC"
+      }, {
+        title: "게시판, 회원 프로그램",
+        content: ""
+      }, {
+        title: "기타 도구",
+        content: "Git, Android Studio"
+      }]
+    }]
   }
 ]
