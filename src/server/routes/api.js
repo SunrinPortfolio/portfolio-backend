@@ -69,6 +69,28 @@ router.get('/detail', (req, res) => {
     });
 });
 
+router.get('/overview', (req, res) => {
+  res.set({ 'Access-Control-Allow-Origin': '*' });
+
+  const { id } = req.query;
+
+  Search(null, { id: Number(id ? id : 0) })
+    .then(data => {
+      const item = data[0];
+
+      return item.getOverview();
+    })
+    .then(data => {
+      res.send(data);
+      res.end();
+    }).catch(err => {
+      console.log(err);
+
+      res.status(500);
+      res.end();
+    });
+});
+
 router.get('/description', (req, res) => {
   res.set({ 'Access-Control-Allow-Origin': '*' });
 
