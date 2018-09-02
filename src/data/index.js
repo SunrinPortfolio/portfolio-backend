@@ -24,7 +24,7 @@ const search = (division, { id = 0, projectName, developer, contestInfo }, proce
   return new Promise((resolve, reject) => {
     // if division is empty string, search from all data
 
-    const result = data.filter(item => {
+    const result = Data.filter(item => {
       if (division !== '' && item.division.indexOf(division) !== -1) return true;
       else if (division !== '') return false;
       if (id !== 0 && id === item.id) return true;
