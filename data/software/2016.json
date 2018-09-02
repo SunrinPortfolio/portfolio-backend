@@ -7,8 +7,7 @@
         "main": 1,
         "sub": 2
       },
-      "rate": 1,
-      "year": 2016
+      "rate": 1
     },
     "qualification": [{
       "title": "웹호스팅",
@@ -58,8 +57,7 @@
         "main": 1,
         "sub": 2
       },
-      "rate": 2,
-      "year": 2016
+      "rate": 2
     },
     "qualification": [{
       "title": "웹호스팅",
@@ -108,8 +106,7 @@
         "main": 1,
         "sub": 2
       },
-      "rate": 2,
-      "year": 2016
+      "rate": 2
     },
     "qualification": [{
       "title": "웹호스팅",
@@ -158,8 +155,7 @@
         "main": 1,
         "sub": 2
       },
-      "rate": 3,
-      "year": 2016
+      "rate": 3
     },
     "qualification": [{
       "title": "웹호스팅",

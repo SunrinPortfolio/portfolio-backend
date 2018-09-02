@@ -7,8 +7,7 @@
         "main": 1,
         "sub": 1
       },
-      "rate": 1,
-      "year": 2017
+      "rate": 1
     },
     "qualification": [{
       "title": "개발 환경",
@@ -51,8 +50,7 @@
         "main": 1,
         "sub": 1
       },
-      "rate": 2,
-      "year": 2017
+      "rate": 2
     },
     "qualification": [{
       "title": "개발 환경",
@@ -95,8 +93,7 @@
         "main": 1,
         "sub": 1
       },
-      "rate": 2,
-      "year": 2017
+      "rate": 2
     },
     "qualification": [{
       "title": "개발 환경",
@@ -139,8 +136,7 @@
         "main": 1,
         "sub": 2
       },
-      "rate": 1,
-      "year": 2017
+      "rate": 1
     },
     "qualification": [{
       "title": "웹호스팅",
@@ -189,8 +185,7 @@
         "main": 1,
         "sub": 2
       },
-      "rate": 2,
-      "year": 2017
+      "rate": 2
     },
     "qualification": [{
       "title": "웹호스팅",
@@ -239,8 +234,7 @@
         "main": 1,
         "sub": 3
       },
-      "rate": 1,
-      "year": 2017
+      "rate": 1
     },
     "qualification": [{
       "title": "개발 환경",
@@ -268,8 +262,7 @@
         "main": 1,
         "sub": 3
       },
-      "rate": 2,
-      "year": 2017
+      "rate": 2
     },
     "qualification": [{
       "title": "개발 환경",
@@ -297,8 +290,7 @@
         "main": 1,
         "sub": 3
       },
-      "rate": 2,
-      "year": 2017
+      "rate": 2
     },
     "qualification": [{
       "title": "프로그램",
@@ -323,8 +315,7 @@
         "main": 2,
         "sub": 1
       },
-      "rate": 1,
-      "year": 2017
+      "rate": 1
     },
     "qualification": [{
       "title": "개발 환경",
@@ -367,8 +358,7 @@
         "main": 2,
         "sub": 1
       },
-      "rate": 2,
-      "year": 2017
+      "rate": 2
     },
     "qualification": [{
       "title": "개발환경",
@@ -411,8 +401,7 @@
         "main": 2,
         "sub": 1
       },
-      "rate": 2,
-      "year": 2017
+      "rate": 2
     },
     "qualification": [{
       "title": "개발환경",
@@ -455,8 +444,7 @@
         "main": 2,
         "sub": 2
       },
-      "rate": 1,
-      "year": 2017
+      "rate": 1
     },
     "qualification": [{
       "title": "개발환경",
@@ -499,8 +487,7 @@
         "main": 2,
         "sub": 2
       },
-      "rate": 2,
-      "year": 2017
+      "rate": 2
     },
     "qualification": [{
       "title": "개발환경",
@@ -543,8 +530,7 @@
         "main": 3,
         "sub": 1
       },
-      "rate": 1,
-      "year": 2017
+      "rate": 1
     },
     "qualification": [{
       "title": "개발환경",
@@ -587,8 +573,7 @@
         "main": 3,
         "sub": 1
       },
-      "rate": 1,
-      "year": 2017
+      "rate": 1
     },
     "qualification": [{
       "title": "개발환경",
