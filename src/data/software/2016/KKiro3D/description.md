@@ -2,7 +2,7 @@
 
 ## editor.html
 
-![editor.html](images/1)
+![editor.html](images/1.png)
 
 에디터를 켜면 이런 화면이 나타납니다.
 
@@ -10,7 +10,7 @@
 
 ## 메인 메뉴
 
-![메인 메뉴](images/2)
+![메인 메뉴](images/2.png)
 
 메인 메뉴에는 File과 Network 카테고리가 있습니다.
 
@@ -30,13 +30,13 @@ Network를 누르면 다음과 같은 항목이 나타납니다.
 
 ## 우측 상단 메뉴
 
-![우측 상단 메뉴](images/3)
+![우측 상단 메뉴](images/3.png)
 
 우측 상단에는 게임을 일시정지하는 버튼과 멀티플레이 접속이 된 경우 연결 상태와 접속자 수가 나타납니다. 연결이 실패한 경우 붉은색 X가 표시되며, 싱글플레이 모드인 경우 표시되지 않습니다.
 
 ## 3D 뷰어
 
-![3D 뷰어](images/4)
+![3D 뷰어](images/4.png)
 
 실제로 게임을 편집할 수 있는 화면으로, 게임 오브젝트들이 표시됩니다. 블렌더와 비슷한 단축키와 조작법을 채택하고 있습니다.
 
@@ -49,39 +49,39 @@ Network를 누르면 다음과 같은 항목이 나타납니다.
 
 ## 3D 커서
 
-![3D 커서](images/5)
+![3D 커서](images/5.png)
 
 ## 개체 선택
 
-![개체 선택](images/6)
+![개체 선택](images/6.png)
 
 개체가 선택되면 오렌지색으로 외곽선이 표시되며, 중앙에 각 축을 나타내는 화살표가 표시됩니다. 이 화살표를 드래그해서 해당 방향으로 움직일 수 있습니다. 다른 플레이어가 선택한 개체는 파란색으로 빛나고, 다른 플레이어의 카메라는 초록색으로 빛납니다.
 
 ## 위젯
 
-![위젯](images/7)
+![위젯](images/7.png)
 
 ## Camera
 
-![Camera](images/8)
+![Camera](images/8.png)
 
 카메라는 선택하면 Near / Far 값도 반영되어 카메라의 Frustum 전체가 보이게 됩니다. 이는 섀도우 매핑 영역을 지정할 때 유용합니다.
 
 ## SpotLight
 
-![SpotLight](images/9)
+![SpotLight](images/9.png)
 
 ## Outline
 
-![Outline](images/10)
+![Outline](images/10.png)
 
 ## Properties
 
-![Properties](images/11)
+![Properties](images/11.png)
 
 ## index.html
 
-![index.html](images/12)
+![index.html](images/12.png)
 
 실제 게임이 실행되는 화면입니다. 테스트용으로 마인크래프트와 비슷하게 블럭을 설치하고 제거할 수 있는 게임을 만들었습니다.
 
@@ -124,7 +124,7 @@ KKiro3D는 webglue를 사용해 렌더링을 수행합니다. webglue는 WebGL �
 
 <https://github.com/yoo2001818/webglue>
 
-![images/13](images/13)
+![images/13](images/13.png)
 
 이 이펙트를 사용하여 섀도우 매핑이 구현되어 있습니다.
 
@@ -140,19 +140,19 @@ KKiro3D에서 기본적으로 사용할 수 있는 컴포넌트들을 나열합�
 
 ### Transform Component
 
-![Transform Component](images/14)
+![Transform Component](images/14.png)
 
 엔티티의 좌표와 회전 / 크기를 설정합니다. Parent가 설정된 경우 local transform이 parent 기준 좌표로 설정됩니다. 이 경우 transform은 절대 좌표계로 표시됩니다.
 
 ### BlenderController Component
 
-![BlenderController Component](images/15)
+![BlenderController Component](images/15.png)
 
 회전에 따라 가운데 지점과 반지름 기준으로 위치를 재설정합니다. 3D뷰의 카메라를 구현하는데 사용됩니다.
 
 ### FPSController Component
 
-![FPSController Component](images/16)
+![FPSController Component](images/16.png)
 
 1인칭 시점 조작을 구현하기 위한 컴포넌트입니다.
 
@@ -160,7 +160,7 @@ Pitch와 Yaw를 받아 Parent의 위치를 바구거나 회전할 수 있도록 
 
 ### Camera Component
 
-![Camera Component](images/17)
+![Camera Component](images/17.png)
 
 카메라를 나타냅니다. Perspective와 Orthogonal, Near / Far 값과 FOV / Zoom, Aspect(종횡비) 값을 설정할 수 있습니다.
 
@@ -168,7 +168,7 @@ Pitch와 Yaw를 받아 Parent의 위치를 바구거나 회전할 수 있도록 
 
 ### Light Component
 
-![Light Component](images/18)
+![Light Component](images/18.png)
 
 광원을 나타냅니다. 타입, 색상과, Ambient / Diffuse / Specular와 Attenuation / 그림자 여부를 설정할 수 있습니다.
 
@@ -176,37 +176,37 @@ Attenuation은 Point / SpotLight에서만 보여지고, Angle은 SpotLight에서
 
 ### Mesh Component
 
-![Mesh Component](images/19)
+![Mesh Component](images/19.png)
 
 메시를 렌더링합니다. Geometry와 Material, 보임 여부와 컬링 반전 여부(Mirror)를 설정할 수 있습니다. 머티리얼의 셰이더가 지원하는 경우 인스턴싱이 자동으로 실행됩니다.
 
 ### Skybox Component
 
-![Skybox Component](images/20)
+![Skybox Component](images/20.png)
 
 Skybox를 렌더링합니다.
 
 ### Parent Component
 
-![Parent Component](images/21)
+![Parent Component](images/21.png)
 
 (Transform을 상속받을) 부모 객체를 설정합니다.
 
 ### Collision Component
 
-![Collision Component](images/22)
+![Collision Component](images/22.png)
 
 충돌 영역을 설정합니다. 중심점, 크기, 활성화 여부를 설정할 수 있습니다.
 
 ### NetworkTemporary Component
 
-![NetworkTemporary Component](images/23)
+![NetworkTemporary Component](images/23.png)
 
 네트워크 동기화로 인해 생성된 임시 객체임을 마킹하는 컴포넌트입니다. Owner가 접속을 종료하면 객체가 삭제됩니다.
 
 ### Animation Component
 
-![Animation Component](images/24)
+![Animation Component](images/24.png)
 
 키프레임 애니메이션을 설정합니다. 시작, 반복 횟수, 길이 등을 설정할 수 있고 애니메이션 데이터 JSON을 붙여넣을 수 있습니다. 애니메이션 데이터는 COLLADA 포맷과 다소 비슷합니다.
 
@@ -244,7 +244,7 @@ Skybox를 렌더링합니다.
 
 actions 값에 따라서 액션과 시그널을 자동으로 생성하고, component를 초기 데이터 생성자로 사용합니다.
 
-![images/25](images/25)
+![images/25](images/25.png)
 
 ## 빌트인 시스템
 
