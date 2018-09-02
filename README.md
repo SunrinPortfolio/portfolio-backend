@@ -2,44 +2,49 @@
 
 > Sunrin Internet High School Software Division Portfolio Site
 
-서버 빌드 명령어: `npm build`
+서버 빌드 명령어: `npm run build`
 
-서버 실행 명령어: `npm start` (실행 전 자동 빌드)
+서버 실행 명령어: `npm run start` (빌드 없이 실행), `npm run start-with-build` (빌드 후 실행)
 
-## API 호출 (목록)
+---
 
-URL: /api/list?division=[학과]
+## API 호출 (목록 요청)
 
-\[학과]에 넣을 수 있는 값: int(1~4)
+URL: `/api/list`
 
-값(int) | 설명
-------- | ------------
-1       | 정보보호과
-2       | 소프트웨어과
-3       | 테크노경영과
-4       | 멀티미디어과
+포트폴리오들을 목록으로 반환
 
 ### 옵션
 
 기본적으로 옵션 미사용시 전체 데이터 반환
 
-`/?date=\[연도]`
+#### `division`
+
+`division`(학과)에 넣을 수 있는 값: String
+
+학과         | 값
+------------ | ------------
+정보보호과   |
+소프트웨어과 | software
+테크노경영과 |
+멀티미디어과 |
+
+#### `year`
 
 해당 연도의 포트폴리오들을 반환함.
 
-\[연도]에 넣을 수 있는 값: year(2017)
+`year`(연도)에 넣을 수 있는 값: int(2016~2017)
 
 값(year)   | 설명
 ---------- | --------------------
 2017       | 2017년의 데이터 요청
 2016       | 2016년의 데이터 요청
----
 
-`/?type=[대회종류]`
+#### `type`
 
-해당 대회의 포트폴리오들을 반환함
+대회 계열
 
-\[대회종류]에 넣을 수 있는 값: int(1~2)
+`type`(대회종류)에 넣을 수 있는 값: int(1~3)
 
 값(int) | 설명
 ------- | ----------------------
@@ -47,13 +52,11 @@ URL: /api/list?division=[학과]
 2       | 모바일 콘텐츠 경진대회
 3       | 선린 해커톤
 
----
+#### `subType`
 
-`/?subType=[계열]`
+`type`의 하위 옵션 (세부 계열)
 
-해당 계열의 포트폴리오들을 반환함
-
-[계열]에 넣을 수 있는 값: int(1~2)
+`subtype`(세부 계열)에 넣을 수 있는 값: int(1~3)
 
 값(int) | 설명(모콘, 선린톤) | 설명 (디콘)
 ------- | -------------------| ----
@@ -61,38 +64,31 @@ URL: /api/list?division=[학과]
 2       | 생활               | 웹 콘텐츠
 3       | -                  | 멀티미디어
 
-type 옵션이 있어야만 작동함.
+#### `rate`
 
----
-
-`/?rate=[상종류]`
-
-해당 상을 수상한 포트폴리오들을 반환함
-
-[상종류]에 넣을 수 있는 값: int(1~4)
+`rate`(상 종류)에 넣을 수 있는 값: int(1~3)
 
 값(int) | 설명 (디콘, 모콘) | 설명 (선린톤)
 ------- | ----------------- | -------------
 1       | 대상              | 금상
 2       | 금상              |
+3       | 은상
+
+#### `name`
+
+`name`(작품명)에 넣을 수 있는 값: str
+
+#### `developer`
+
+`developer`(참여자이름)에 넣을 수 있는 값: str
 
 ---
-
-`/?name=[작품명]`
-
-해당 작품의 데이터를 반환함
-
-\[작품명]에 넣을 수 있는 값: str
-
----
-
-`/?developer=[참여자이름]`
-
-해당 참여자가 참여한 포트폴리오들을 반환함
-
-\[참여자이름]에 넣을 수 있는 값: str
 
 ### 반환 데이터 예시 (작품 목록)
+
+Request `/api/list`
+
+Response
 
 ```json
 {
@@ -100,7 +96,6 @@ type 옵션이 있어야만 작동함.
   "teamName": "팀명",
   "developers": ["홍길동", "철수", "영희"],
   "contestInfo": {
-    "year": 2017,
     "contest": "디지털 콘텐츠 경진대회",
     "field": "응용",
     "rate": "대상"
@@ -111,38 +106,66 @@ type 옵션이 있어야만 작동함.
       "contents": [
         {
           "title": "OS",
-          "content": "Microsoft Windows 10"
+          "contents": "Microsoft Windows 10"
         },
         {
           "title": "플랫폼",
-          "content": "Intel(R) Core(TM) i5-5257U CPU 2.70GHz / RAM 8G"
+          "contents": "Intel(R) Core(TM) i5-5257U CPU 2.70GHz / RAM 8G"
         }
       ]
     }
   ],
-  "overview": "2018년 8월 디지털 콘텐츠 경진대회 ~",
-  "division": 2,
+  "year": 2017,
+  "division": "software",
   "id": 1
 }
 ```
 
-## API 호출 (세부설명(MD) 요청 )
+---
+
+## API 호출 (작품 개요 (overview) 요청 )
+
+URL: /api/overview?id=[id]
+
+`id` 값: list 요청시 전송된 데이터에 들어있는 id값
+
+---
+
+### 반환 데이터 예시 (작품 개요 요청)
+
+Request `/api/overview?id=1`
+
+Response
+
+```md
+작품 개요
+```
+
+---
+
+## API 호출 (작품 설명 (description) 요청 )
 
 URL: /api/description?id=[id]
 
-\[id]에 넣을 수 있는 값: list 요청시 전송된 데이터에 들어있는 id값
+`id` 값: list 요청시 전송된 데이터에 들어있는 id값
 
 ### 반환 데이터 예시 (세부설명 요청)
 
-images엔 이미지 url이 자동으로 바인딩 될 에정이나, 아직 이미지 데이터를 뽑지 못함
+Request `/api/description?id=1`
+
+Response
 
 ```md
 # 작품명
 
 ## 메인 화면
 
-![메인 화면](images/1.png)
+![메인 화면](/api/image/1/1.png)
 
 메인화면입니다.
 
 ```
+
+이미지 url은 `/api/image/{작품 id}/{파일명}` 의 규칙으로 되어있음
+
+---
