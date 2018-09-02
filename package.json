@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "build": "babel src --out-dir build",
-    "start": "npm run build && node ./build/server/app.js"
+    "start": "node ./build/server/app.js",
+    "start-with-build": "npm run build && npm run start"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
