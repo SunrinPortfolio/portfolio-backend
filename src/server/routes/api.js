@@ -1,7 +1,9 @@
 
+import fs from 'fs';
 import express from 'express';
 
 import Search from '../../data/index';
+import getProjectDataFileDirPath from '../../data/modules/getProjectDataFileDirPath';
 
 const router = express.Router();
 
@@ -9,18 +11,28 @@ const router = express.Router();
 router.get('/list', (req, res) => {
   res.set({ 'Access-Control-Allow-Origin': '*' });
 
+  const {
+    division,
+    name,
+    developer,
+    type,
+    subType,
+    rate,
+    year,
+  } = req.query;
+
   Search(
-    req.query.division,
+    division || '',
     {
-      projectName: req.query.name || "",
-      developer: req.query.developer || "", 
+      projectName: name || "",
+      developer: developer || "", 
       contestInfo: {
         type: {
-          main: req.query.type,
-          sub: req.query.subType
+          main: type,
+          sub: subType
         },
-        rate: req.query.rate,
-        year: req.query.year,
+        rate: rate,
+        year: year,
       }
     },
     item => ({ contestInfo: item.getContestInfoByString() })
@@ -38,7 +50,9 @@ router.get('/list', (req, res) => {
 router.get('/detail', (req, res) => {
   res.set({ 'Access-Control-Allow-Origin': '*' });
 
-  Search(null, { id: Number(req.query.id ? req.query.id : 0) })
+  const { id } = req.query;
+
+  Search(null, { id: Number(id ? id : 0) })
     .then(data => {
       if (data.length === 0) res.json({ });
       else {
@@ -58,7 +72,9 @@ router.get('/detail', (req, res) => {
 router.get('/description', (req, res) => {
   res.set({ 'Access-Control-Allow-Origin': '*' });
 
-  Search(null, { id: Number(req.query.id ? req.query.id : 0) })
+  const { id } = req.query;
+
+  Search(null, { id: Number(id ? id : 0) })
     .then(data => {
       const item = data[0];
 
@@ -73,6 +89,33 @@ router.get('/description', (req, res) => {
       res.status(500);
       res.end();
     });
-})
+});
+
+router.get('/image/:id/:image', (req, res) => {
+  res.set({ 'Access-Control-Allow-Origin': '*' });
+
+  const { id, image } = req.params;
+
+  Search(null, { id: Number(id ? id : 0) })
+    .then(data => {
+      const item = data[0];
+
+      return new Promise((resolve, reject) => {
+        fs.readFile(`${getProjectDataFileDirPath(item)}/images/${image}`, (err, data) => {
+          if (err) reject(err);
+
+          resolve(data);
+        });
+      });
+    })
+    .then(img => {
+      res.end(img, 'binary');
+    }).catch(err => {
+      console.log(err);
+
+      res.status(500);
+      res.end();
+    });
+});
 
 export default router;
