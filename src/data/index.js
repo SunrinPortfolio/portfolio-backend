@@ -10,12 +10,9 @@
 import getDescription from './modules/getDescription';
 import contestInfoToString from './modules/contestInfoToString';
 
-import softwareDivfullData from './software';
+import data from './data';
 
-const fullData = [
-  ...softwareDivfullData.map(item => Object.assign(item, { division: 2 })),
-  // ...anotherDivfullData.map(item => Object.assign(item, { division: divisionCode })),
-].map((item, index) => Object.assign(item,
+const Data = data.map((item, index) => Object.assign(item,
   {
     id: index + 1,
     getDescription: getDescription.bind(null, item),
@@ -25,15 +22,17 @@ const fullData = [
 
 const search = (division, { id = 0, projectName, developer, contestInfo }, processFunc) => {
   return new Promise((resolve, reject) => {
-    // if division is 0, search from all data
-    const data = division === 0 ? fullData : fullData.filter(item => item.division == division);
-    
+    // if division is empty string, search from all data
+
     const result = data.filter(item => {
+      if (division !== '' && item.division.indexOf(division) !== -1) return true;
+      else if (division !== '') return false;
       if (id !== 0 && id === item.id) return true;
       else if (id !== 0) return false;
 
       if (projectName && String(item.projectName).indexOf(projectName) < 0) return false;
-      if (developer   && item.developers.indexOf(item => String(item).indexOf(developer) >= 0) === -1) return false;
+      if (developer   && item.developers.find(iter => String(iter).indexOf(developer) !== -1)) return true;
+      else if (developer) return false;
 
       try {
         if (contestInfo) {
@@ -53,6 +52,6 @@ const search = (division, { id = 0, projectName, developer, contestInfo }, proce
   });
 };
 
-const searchAPI = (division, query, processFunc) => search(division ? division : 0, query, processFunc);
+const searchAPI = (division, query, processFunc) => search(division, query, processFunc);
 
 export default searchAPI;
