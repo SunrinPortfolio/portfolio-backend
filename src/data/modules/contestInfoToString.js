@@ -44,7 +44,6 @@ const contestInfoToString = data => {
   }
 
   return {
-    year: contestInfo.year,
     contest: contestName,
     field,
     rate,
