@@ -18,13 +18,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/api/', apiRouter);
 
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
 const server = app.listen(port, () => {
   console.log('');
   console.log(`Listening on ${port}`);
