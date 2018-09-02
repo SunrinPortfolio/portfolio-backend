@@ -27,6 +27,11 @@ router.get('/list', (req, res) => {
   ).then(data => {
     res.json(data);
     res.end();
+  }).catch(err => {
+    console.log(err);
+
+    res.status(500);
+    res.end();
   });
 });
 
@@ -42,6 +47,11 @@ router.get('/detail', (req, res) => {
         res.json(result);
       };
       res.end();
+    }).catch(err => {
+      console.log(err);
+
+      res.status(500);
+      res.end();
     });
 });
 
@@ -56,6 +66,11 @@ router.get('/description', (req, res) => {
     })
     .then(data => {
       res.send(data);
+      res.end();
+    }).catch(err => {
+      console.log(err);
+
+      res.status(500);
       res.end();
     });
 })
