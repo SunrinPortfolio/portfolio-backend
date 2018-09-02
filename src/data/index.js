@@ -7,8 +7,8 @@
 // 선린톤 - 1 게임, 2 생활
 // rate : 1 대상, 2 금상, 3 은상 ( 선린톤은 1 금상 )
 
-import getDescription from './getDescription';
-import contestInfoToString from './contestInfoToString';
+import getDescription from './modules/getDescription';
+import contestInfoToString from './modules/contestInfoToString';
 
 import softwareDivfullData from './software';
 
@@ -24,8 +24,7 @@ const fullData = [
 ));
 
 const search = (division, { id = 0, projectName, developer, contestInfo }, processFunc) => {
-  return new Promise((resolve, _) => {
-
+  return new Promise((resolve, reject) => {
     // if division is 0, search from all data
     const data = division === 0 ? fullData : fullData.filter(item => item.division == division);
     
@@ -36,17 +35,19 @@ const search = (division, { id = 0, projectName, developer, contestInfo }, proce
       if (projectName && String(item.projectName).indexOf(projectName) < 0) return false;
       if (developer   && item.developers.indexOf(item => String(item).indexOf(developer) >= 0) === -1) return false;
 
-      if (contestInfo) {
-        if (contestInfo.type) {
-          if (contestInfo.type.main && Number(contestInfo.type.main) !== item.contestInfo.type.main) return false;
-          if (contestInfo.type.sub  && Number(contestInfo.type.sub)  !== item.contestInfo.type.sub ) return false;
+      try {
+        if (contestInfo) {
+          if (contestInfo.type) {
+            if (contestInfo.type.main && Number(contestInfo.type.main) !== item.contestInfo.type.main) return false;
+            if (contestInfo.type.sub  && Number(contestInfo.type.sub)  !== item.contestInfo.type.sub ) return false;
+          }
+          if (contestInfo.rate && Number(contestInfo.rate) !== item.contestInfo.rate) return false;
+          if (contestInfo.year && Number(contestInfo.year) !== item.contestInfo.year) return false;
         }
-        if (contestInfo.rate && Number(contestInfo.rate) !== item.contestInfo.rate) return false;
-        if (contestInfo.year && Number(contestInfo.year) !== item.contestInfo.year) return false;
-      }
+      } catch(err) { reject(err); }
 
       return true;
-    }).map(item => processFunc ? Object.assign(item, processFunc(item)) : item);
+    }).map(item => processFunc ? Object.assign(JSON.parse(JSON.stringify(item)), processFunc(item)) : item);
     
     resolve(result);
   });
