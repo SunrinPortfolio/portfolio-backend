@@ -291,5 +291,54 @@
         "contents": ""
       }]
     }]
+  },
+  {
+    "projectName": "Blue Chip",
+    "teamName": "오르락내리락",
+    "developers": ["장준영", "강명서", "최희영", "김은희", "이민우"],
+    "contestInfo": {
+      "type": {
+        "main": 1,
+        "sub": 2
+      },
+      "rate": 3
+    },
+    "qualification": [{
+      "title": "웹호스팅",
+      "contents": [{
+        "title": "웹호스팅 서비스 업체",
+        "contents": "Heroku"
+      }, {
+        "title": "홈페이지 주소",
+        "contents": "https://bluechip.herokuapp.com"
+      }, {
+        "title": "Web Server",
+        "contents": "Gunicorn"
+      }, {
+        "title": "Server-side Language",
+        "contents": "Python"
+      }, {
+        "title": "DBMS",
+        "contents": "SQLite3"
+      }, {
+        "title": "기타",
+        "contents": ""
+      }]
+    }, {
+      "title": "개발도구",
+      "contents": [{
+        "title": "텍스트에디터",
+        "contents": "Atom"
+      }, {
+        "title": "그래픽 프로그램",
+        "contents": "Adobe Photoshop CC, Bootstrap"
+      }, {
+        "title": "게시판, 회원 프로그램 (프레임워크 포함)",
+        "contents": ""
+      }, {
+        "title": "기타 도구",
+        "contents": ""
+      }]
+    }]
   }
 ]
