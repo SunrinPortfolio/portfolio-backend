@@ -20,11 +20,11 @@ ex)
 
 ```text
 /api/list/?
-division=software                  // 여러 옵션이 가능하지만, 현재 software 하나밖에 존재하지 않음
-&year=2016+2017                    // 2016년과 2017년의 작품을 선택
+division=software // 여러 옵션이 가능하지만, 현재 software 하나밖에 존재하지 않음
+&year=2016+2017 // 2016년과 2017년의 작품을 선택
 &type=digital-contents+sunrin-thon // 디지털 콘텐츠 경진대회나 선린 해커톤 대회의 작품들을 선택
-&field=game+life                   // 게임과 생활 분야의 작품들 선택
-&rate=1+2                          // 대상과 금상 선택
+&field=game+life // 게임과 생활 분야의 작품들 선택
+&rate=1+2 // 대상과 금상 선택
 ```
 
 단, 옵션은 필터링 용이라는건 변함이 없기에
@@ -53,7 +53,7 @@ division=software                  // 여러 옵션이 가능하지만, 현재 s
 
 해당 연도의 포트폴리오들을 반환함.
 
-`year`(연도)에 넣을 수 있는 값: int(2016~2017)
+`year`(연도)에 넣을 수 있는 값: String
 
 값(year)   | 설명
 ---------- | --------------------
@@ -64,7 +64,7 @@ division=software                  // 여러 옵션이 가능하지만, 현재 s
 
 대회 계열
 
-`type`(대회종류)에 넣을 수 있는 값: int(1~3)
+`type`(대회종류)에 넣을 수 있는 값: String
 
 값(int)          | 설명
 ---------------- | ----------------------
@@ -74,19 +74,19 @@ sunrin-thon      | 선린 해커톤
 
 #### `field`
 
-`field`(분야)에 넣을 수 있는 값: int(1~3)
+`field`(분야)에 넣을 수 있는 값: String
 
-값(int)     | 설명
--------     | ----------
-game        | 게임
-life        | 생활
-application | 응용
-web         | 웹 콘텐츠
-multimedia  | 멀티미디어
+값(int)     | 설명       | 디콘 | 모콘 | 선린톤
+-------     | ---------- | ---- | ---- | ------
+game        | 게임       | X    | O    | O
+life        | 생활       | X    | O    | O
+application | 응용       | O    | X    | X
+web         | 웹 콘텐츠  | O    | X    | X
+multimedia  | 멀티미디어 | O    | X    | X
 
 #### `rate`
 
-`rate`(상 종류)에 넣을 수 있는 값: int(1~4)
+`rate`(상 종류)에 넣을 수 있는 값: String
 
 값(int) | 설명 |
 ------- | ---- |
@@ -97,11 +97,11 @@ multimedia  | 멀티미디어
 
 #### `name`
 
-`name`(작품명)에 넣을 수 있는 값: str
+`name`(작품명)에 넣을 수 있는 값: String
 
 #### `developer`
 
-`developer`(참여자이름)에 넣을 수 있는 값: str
+`developer`(참여자이름)에 넣을 수 있는 값: String
 
 ---
 
@@ -117,9 +117,9 @@ Response
   "teamName": "팀명",
   "developers": ["홍길동", "철수", "영희"],
   "contestInfo": {
-    "contest": "디지털 콘텐츠 경진대회",
-    "field": "응용",
-    "rate": "대상"
+    "contest": "digital-contents",
+    "field": "game",
+    "rate": "1"
   },
   "qualification": [
     {
@@ -138,7 +138,7 @@ Response
   ],
   "year": 2017,
   "division": "software",
-  "id": 1
+  "id": "id"
 }
 ```
 
@@ -154,7 +154,7 @@ URL: /api/overview?id=[id]
 
 ### 반환 데이터 예시 (작품 개요 요청)
 
-Request `/api/overview?id=1`
+Request `/api/overview?id=[id]`
 
 Response
 
@@ -172,7 +172,7 @@ URL: /api/description?id=[id]
 
 ### 반환 데이터 예시 (세부설명 요청)
 
-Request `/api/description?id=1`
+Request `/api/description?id=[id]`
 
 Response
 
@@ -181,7 +181,7 @@ Response
 
 ## 메인 화면
 
-![메인 화면](/api/image/1/1.png)
+![메인 화면](/api/image/[id]/1.png)
 
 메인화면입니다.
 
