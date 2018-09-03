@@ -2,7 +2,7 @@
 import fs from 'fs';
 import express from 'express';
 
-import Search from '../../data/index';
+import Search from '../../data/search';
 import getProjectDataFileDirPath from '../../data/modules/getProjectDataFileDirPath';
 
 const router = express.Router();
@@ -25,15 +25,14 @@ router.get('/list', (req, res) => {
     {
       division,
       projectName: name,
-      developer, 
+      developer,
       contestInfo: {
         type,
         field,
         rate,
       },
-      year, 
+      year,
     },
-    item => ({ contestInfo: item.getContestInfoByString() })
   ).then(data => {
     res.json(data);
     res.end();
@@ -50,7 +49,7 @@ router.get('/detail', (req, res) => {
 
   const { id } = req.query;
 
-  Search({ id: Number(id ? id : 0) })
+  Search({ id })
     .then(data => {
       if (data.length === 0) res.json({ });
       else {
@@ -72,7 +71,7 @@ router.get('/overview', (req, res) => {
 
   const { id } = req.query;
 
-  Search({ id: Number(id ? id : 0) })
+  Search({ id })
     .then(data => {
       const item = data[0];
 
@@ -94,7 +93,7 @@ router.get('/description', (req, res) => {
 
   const { id } = req.query;
 
-  Search({ id: Number(id ? id : 0) })
+  Search({ id })
     .then(data => {
       const item = data[0];
 
@@ -116,7 +115,7 @@ router.get('/image/:id/:image', (req, res) => {
 
   const { id, image } = req.params;
 
-  Search({ id: Number(id ? id : 0) })
+  Search({ id })
     .then(data => {
       const item = data[0];
 
