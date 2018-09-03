@@ -4,9 +4,9 @@
     "developers": ["유덕남"],
     "contestInfo": {
       "type": {
-        "main": 1,
-        "sub": 4
+        "main": 1
       },
+      "field": 4,
       "rate": 1
     },
     "qualification": [{
@@ -54,9 +54,9 @@
     "developers": ["홍종현", "최예찬", "전하연", "박효정"],
     "contestInfo": {
       "type": {
-        "main": 1,
-        "sub": 4
+        "main": 1
       },
+      "field": 4,
       "rate": 2
     },
     "qualification": [{
@@ -103,9 +103,9 @@
     "developers": ["구창림", "진상현", "오준석", "김태윤", "박종운"],
     "contestInfo": {
       "type": {
-        "main": 1,
-        "sub": 4
+        "main": 1
       },
+      "field": 4,
       "rate": 2
     },
     "qualification": [{
@@ -152,9 +152,9 @@
     "developers": ["김주용", "방진형", "방진성", "이예진", "이예림"],
     "contestInfo": {
       "type": {
-        "main": 1,
-        "sub": 4
+        "main": 1
       },
+      "field": 4,
       "rate": 3
     },
     "qualification": [{

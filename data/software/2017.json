@@ -4,9 +4,9 @@
     "developers": ["양준석", "백승훈", "김민규", "고동연"],
     "contestInfo": {
       "type": {
-        "main": 1,
-        "sub": 3
+        "main": 1
       },
+      "field": 3,
       "rate": 1
     },
     "qualification": [{
@@ -47,9 +47,9 @@
     "developers": ["김찬영", "이로운", "김동규", "조우진", "홍초희"],
     "contestInfo": {
       "type": {
-        "main": 1,
-        "sub": 3
+        "main": 1
       },
+      "field": 3,
       "rate": 2
     },
     "qualification": [{
@@ -90,9 +90,9 @@
     "developers": ["양준석", "조재현", "김학준", "배수호"],
     "contestInfo": {
       "type": {
-        "main": 1,
-        "sub": 3
+        "main": 1
       },
+      "field": 3,
       "rate": 2
     },
     "qualification": [{
@@ -133,9 +133,9 @@
     "developers": ["김현", "이일훈", "김도언", "김택서", "김연준"],
     "contestInfo": {
       "type": {
-        "main": 1,
-        "sub": 4
+        "main": 1
       },
+      "field": 4,
       "rate": 1
     },
     "qualification": [{
@@ -182,9 +182,9 @@
     "developers": ["김준영", "이강준", "이효원"],
     "contestInfo": {
       "type": {
-        "main": 1,
-        "sub": 4
+        "main": 1
       },
+      "field": 4,
       "rate": 2
     },
     "qualification": [{
@@ -231,9 +231,9 @@
     "developers": ["김지현", "김은희", "최서연", "김동규", "이성효"],
     "contestInfo": {
       "type": {
-        "main": 1,
-        "sub": 5
+        "main": 1
       },
+      "field": 5,
       "rate": 1
     },
     "qualification": [{
@@ -259,9 +259,9 @@
     "developers": ["김준영"],
     "contestInfo": {
       "type": {
-        "main": 1,
-        "sub": 5
+        "main": 1
       },
+      "field": 5,
       "rate": 2
     },
     "qualification": [{
@@ -287,9 +287,9 @@
     "developers": ["김가은", "김한나", "성은비", "이수연", "최상준"],
     "contestInfo": {
       "type": {
-        "main": 1,
-        "sub": 5
+        "main": 1
       },
+      "field": 5,
       "rate": 2
     },
     "qualification": [{
@@ -312,9 +312,9 @@
     "developers": ["김영남", "노영진", "박정현"],
     "contestInfo": {
       "type": {
-        "main": 2,
-        "sub": 1
+        "main": 2
       },
+      "field": 1,
       "rate": 1
     },
     "qualification": [{
@@ -355,9 +355,9 @@
     "developers": ["김현", "김도언", "김가은", "김한나"],
     "contestInfo": {
       "type": {
-        "main": 2,
-        "sub": 1
+        "main": 2
       },
+      "field": 1,
       "rate": 2
     },
     "qualification": [{
@@ -398,9 +398,9 @@
     "developers": ["양준석", "오정원", "배수호", "김채연"],
     "contestInfo": {
       "type": {
-        "main": 2,
-        "sub": 1
+        "main": 2
       },
+      "field": 1,
       "rate": 2
     },
     "qualification": [{
@@ -441,9 +441,9 @@
     "developers": ["안용호", "김연준", "유성진", "신현준"],
     "contestInfo": {
       "type": {
-        "main": 2,
-        "sub": 2
+        "main": 2
       },
+      "field": 2,
       "rate": 1
     },
     "qualification": [{
@@ -484,9 +484,9 @@
     "developers": ["이새영", "김은희", "강성준"],
     "contestInfo": {
       "type": {
-        "main": 2,
-        "sub": 2
+        "main": 2
       },
+      "field": 2,
       "rate": 2
     },
     "qualification": [{
@@ -527,9 +527,9 @@
     "developers": ["이헌우", "정선우", "김가은", "최서연"],
     "contestInfo": {
       "type": {
-        "main": 3,
-        "sub": 1
+        "main": 3
       },
+      "field": 1,
       "rate": 2
     },
     "qualification": [{
@@ -570,9 +570,9 @@
     "developers": ["송원준", "오준석", "구창림", "윤영채"],
     "contestInfo": {
       "type": {
-        "main": 3,
-        "sub": 1
+        "main": 3
       },
+      "field": 1,
       "rate": 2
     },
     "qualification": [{
