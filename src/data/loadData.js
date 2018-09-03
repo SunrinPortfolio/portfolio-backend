@@ -1,7 +1,7 @@
 
 import getIdOfPortfolioData from './modules/getIdOfPortfolioData';
 import getMarkdownFiles from './modules/getMarkdownFiles';
-import contestInfoToString from './modules/contestInfoToString';
+import processRawContestInfo from './modules/processRawContestInfo';
 
 import softwareData2016 from './../../data/software/2017.json';
 import softwareData2017 from './../../data/software/2017.json';
@@ -18,9 +18,9 @@ const portfolios = [
 const promises = portfolios.map(item => {
   const result = Object.assign(item, {
     id: getIdOfPortfolioData(item),
+    contestInfo: processRawContestInfo(item.contestInfo),
     getOverview: getMarkdownFiles.getOverview.bind(null, item),
     getDescription: getMarkdownFiles.getDescription.bind(null, item),
-    getContestInfoByString: contestInfoToString.bind(null, item),
   });
 
   return result.getOverview().then(overview => {
