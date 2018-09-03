@@ -193,5 +193,54 @@
         "contents": ""
       }]
     }]
+  },
+  {
+    "projectName": "Malang Book",
+    "teamName": "노예와 영남이들",
+    "developers": ["조재호", "김민석", "장교식", "이창현"],
+    "contestInfo": {
+      "type": {
+        "main": 1,
+        "sub": 2
+      },
+      "rate": 3
+    },
+    "qualification": [{
+      "title": "웹호스팅",
+      "contents": [{
+        "title": "웹호스팅 서비스 업체",
+        "contents": "Vultr"
+      }, {
+        "title": "홈페이지 주소",
+        "contents": "http://prec.connotation.cf"
+      }, {
+        "title": "Web Server",
+        "contents": "CentOS"
+      }, {
+        "title": "Server-side Language",
+        "contents": "Node.js"
+      }, {
+        "title": "DBMS",
+        "contents": "SQL"
+      }, {
+        "title": "기타",
+        "contents": "connotation.cf 는 사용하지 않음"
+      }]
+    }, {
+      "title": "개발도구",
+      "contents": [{
+        "title": "텍스트에디터",
+        "contents": "WebStorm"
+      }, {
+        "title": "그래픽 프로그램",
+        "contents": "Adobe Photoshop CC, Adobe Illustrator CC"
+      }, {
+        "title": "게시판, 회원 프로그램 (프레임워크 포함)",
+        "contents": "jQuery, EJS, TinyMCE"
+      }, {
+        "title": "기타 도구",
+        "contents": ""
+      }]
+    }]
   }
 ]
