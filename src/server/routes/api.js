@@ -16,24 +16,22 @@ router.get('/list', (req, res) => {
     name,
     developer,
     type,
-    subType,
+    field,
     rate,
     year,
   } = req.query;
 
   Search(
-    division || '',
     {
-      projectName: name || "",
-      developer: developer || "", 
+      division,
+      projectName: name,
+      developer, 
       contestInfo: {
-        type: {
-          main: type,
-          sub: subType
-        },
-        rate: rate,
-        year: year,
-      }
+        type,
+        field,
+        rate,
+      },
+      year, 
     },
     item => ({ contestInfo: item.getContestInfoByString() })
   ).then(data => {
@@ -52,7 +50,7 @@ router.get('/detail', (req, res) => {
 
   const { id } = req.query;
 
-  Search(null, { id: Number(id ? id : 0) })
+  Search({ id: Number(id ? id : 0) })
     .then(data => {
       if (data.length === 0) res.json({ });
       else {
@@ -74,7 +72,7 @@ router.get('/overview', (req, res) => {
 
   const { id } = req.query;
 
-  Search(null, { id: Number(id ? id : 0) })
+  Search({ id: Number(id ? id : 0) })
     .then(data => {
       const item = data[0];
 
@@ -96,7 +94,7 @@ router.get('/description', (req, res) => {
 
   const { id } = req.query;
 
-  Search(null, { id: Number(id ? id : 0) })
+  Search({ id: Number(id ? id : 0) })
     .then(data => {
       const item = data[0];
 
@@ -118,7 +116,7 @@ router.get('/image/:id/:image', (req, res) => {
 
   const { id, image } = req.params;
 
-  Search(null, { id: Number(id ? id : 0) })
+  Search({ id: Number(id ? id : 0) })
     .then(data => {
       const item = data[0];
 
