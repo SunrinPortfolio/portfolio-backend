@@ -5,7 +5,7 @@
     "contestInfo": {
       "type": {
         "main": 1,
-        "sub": 2
+        "sub": 4
       },
       "rate": 1
     },
@@ -55,7 +55,7 @@
     "contestInfo": {
       "type": {
         "main": 1,
-        "sub": 2
+        "sub": 4
       },
       "rate": 2
     },
@@ -104,7 +104,7 @@
     "contestInfo": {
       "type": {
         "main": 1,
-        "sub": 2
+        "sub": 4
       },
       "rate": 2
     },
@@ -153,7 +153,7 @@
     "contestInfo": {
       "type": {
         "main": 1,
-        "sub": 2
+        "sub": 4
       },
       "rate": 3
     },

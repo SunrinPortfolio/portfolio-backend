@@ -5,7 +5,7 @@
     "contestInfo": {
       "type": {
         "main": 1,
-        "sub": 1
+        "sub": 3
       },
       "rate": 1
     },
@@ -48,7 +48,7 @@
     "contestInfo": {
       "type": {
         "main": 1,
-        "sub": 1
+        "sub": 3
       },
       "rate": 2
     },
@@ -91,7 +91,7 @@
     "contestInfo": {
       "type": {
         "main": 1,
-        "sub": 1
+        "sub": 3
       },
       "rate": 2
     },
@@ -134,7 +134,7 @@
     "contestInfo": {
       "type": {
         "main": 1,
-        "sub": 2
+        "sub": 4
       },
       "rate": 1
     },
@@ -183,7 +183,7 @@
     "contestInfo": {
       "type": {
         "main": 1,
-        "sub": 2
+        "sub": 4
       },
       "rate": 2
     },
@@ -232,7 +232,7 @@
     "contestInfo": {
       "type": {
         "main": 1,
-        "sub": 3
+        "sub": 5
       },
       "rate": 1
     },
@@ -260,7 +260,7 @@
     "contestInfo": {
       "type": {
         "main": 1,
-        "sub": 3
+        "sub": 5
       },
       "rate": 2
     },
@@ -288,7 +288,7 @@
     "contestInfo": {
       "type": {
         "main": 1,
-        "sub": 3
+        "sub": 5
       },
       "rate": 2
     },
