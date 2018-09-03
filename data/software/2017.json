@@ -3,9 +3,7 @@
     "teamName": "담다디담다디담다디담 담다디다담 다다담",
     "developers": ["양준석", "백승훈", "김민규", "고동연"],
     "contestInfo": {
-      "type": {
-        "main": 1
-      },
+      "type": 1,
       "field": 3,
       "rate": 1
     },
@@ -46,9 +44,7 @@
     "teamName": "펭귄 마이쪙",
     "developers": ["김찬영", "이로운", "김동규", "조우진", "홍초희"],
     "contestInfo": {
-      "type": {
-        "main": 1
-      },
+      "type": 1,
       "field": 3,
       "rate": 2
     },
@@ -89,9 +85,7 @@
     "teamName": "스테이플러",
     "developers": ["양준석", "조재현", "김학준", "배수호"],
     "contestInfo": {
-      "type": {
-        "main": 1
-      },
+      "type": 1,
       "field": 3,
       "rate": 2
     },
@@ -132,9 +126,7 @@
     "teamName": "일후니",
     "developers": ["김현", "이일훈", "김도언", "김택서", "김연준"],
     "contestInfo": {
-      "type": {
-        "main": 1
-      },
+      "type": 1,
       "field": 4,
       "rate": 1
     },
@@ -181,9 +173,7 @@
     "teamName": "FrostCore",
     "developers": ["김준영", "이강준", "이효원"],
     "contestInfo": {
-      "type": {
-        "main": 1
-      },
+      "type": 1,
       "field": 4,
       "rate": 2
     },
@@ -230,9 +220,7 @@
     "teamName": "디콘 준비기간 1년",
     "developers": ["김지현", "김은희", "최서연", "김동규", "이성효"],
     "contestInfo": {
-      "type": {
-        "main": 1
-      },
+      "type": 1,
       "field": 5,
       "rate": 1
     },
@@ -258,9 +246,7 @@
     "teamName": "20306",
     "developers": ["김준영"],
     "contestInfo": {
-      "type": {
-        "main": 1
-      },
+      "type": 1,
       "field": 5,
       "rate": 2
     },
@@ -286,9 +272,7 @@
     "teamName": "상준이랑 팀하면 상주나",
     "developers": ["김가은", "김한나", "성은비", "이수연", "최상준"],
     "contestInfo": {
-      "type": {
-        "main": 1
-      },
+      "type": 1,
       "field": 5,
       "rate": 2
     },
@@ -311,9 +295,7 @@
     "teamName": "고양이가 신청했어요",
     "developers": ["김영남", "노영진", "박정현"],
     "contestInfo": {
-      "type": {
-        "main": 2
-      },
+      "type": 2,
       "field": 1,
       "rate": 1
     },
@@ -354,9 +336,7 @@
     "teamName": "쓰리디-조아",
     "developers": ["김현", "김도언", "김가은", "김한나"],
     "contestInfo": {
-      "type": {
-        "main": 2
-      },
+      "type": 2,
       "field": 1,
       "rate": 2
     },
@@ -397,9 +377,7 @@
     "teamName": "라쀼타",
     "developers": ["양준석", "오정원", "배수호", "김채연"],
     "contestInfo": {
-      "type": {
-        "main": 2
-      },
+      "type": 2,
       "field": 1,
       "rate": 2
     },
@@ -440,9 +418,7 @@
     "teamName": "카페人",
     "developers": ["안용호", "김연준", "유성진", "신현준"],
     "contestInfo": {
-      "type": {
-        "main": 2
-      },
+      "type": 2,
       "field": 2,
       "rate": 1
     },
@@ -483,9 +459,7 @@
     "teamName": "TIDY Mind",
     "developers": ["이새영", "김은희", "강성준"],
     "contestInfo": {
-      "type": {
-        "main": 2
-      },
+      "type": 2,
       "field": 2,
       "rate": 2
     },
@@ -526,9 +500,7 @@
     "teamName": "팀탐 리턴즈",
     "developers": ["이헌우", "정선우", "김가은", "최서연"],
     "contestInfo": {
-      "type": {
-        "main": 3
-      },
+      "type": 3,
       "field": 1,
       "rate": 2
     },
@@ -569,9 +541,7 @@
     "teamName": "해적왕 원준갓",
     "developers": ["송원준", "오준석", "구창림", "윤영채"],
     "contestInfo": {
-      "type": {
-        "main": 3
-      },
+      "type": 3,
       "field": 1,
       "rate": 2
     },
