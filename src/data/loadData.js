@@ -28,7 +28,7 @@ const promises = portfolios.map(item => {
       (overview.length > 200)
         ? overview.slice(overview.indexOf(item.projectName) + item.projectName.length + 2, 200)
         : overview
-      ).replace(/[#*]/g, '').replace(/\s/g, ' ')}...`;
+      ).replace(/[#*/\\]/g, '').replace(/\s+/g, ' ').slice(1)}...`;
 
     result.brief = brief;
 
