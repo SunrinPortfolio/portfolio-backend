@@ -12,14 +12,27 @@ import contestInfoToString from './modules/contestInfoToString';
 
 import data from './data';
 
-const Data = data.map((item, index) => Object.assign(item,
-  {
+const Data = data.map((item, index) => {
+  
+  const result = Object.assign(item, {
     id: index + 1,
     getOverview: getMarkdownFiles.getOverview.bind(null, item),
     getDescription: getMarkdownFiles.getDescription.bind(null, item),
     getContestInfoByString: contestInfoToString.bind(null, item),
-  }
-));
+  });
+
+  result.getOverview().then(overview => {
+    const brief = `${(
+      (overview.length > 200)
+        ? overview.slice(overview.indexOf(item.projectName) + item.projectName.length + 2, 200)
+        : overview
+      ).replace(/[#*]/g, '').replace(/\s/g, ' ')}...`;
+
+    result.brief = brief;
+
+    return result;
+  })
+});
 
 const search = (query, processFunc) => {
   return new Promise((resolve, reject) => {
