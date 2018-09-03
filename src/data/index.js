@@ -7,15 +7,16 @@
 // 선린톤 - 1 게임, 2 생활
 // rate : 1 대상, 2 금상, 3 은상 ( 선린톤은 1 금상 )
 
+import getIdOfPortfolioData from './modules/getIdOfPortfolioData';
 import getMarkdownFiles from './modules/getMarkdownFiles';
 import contestInfoToString from './modules/contestInfoToString';
 
 import data from './data';
 
-const Data = data.map((item, index) => {
+const Data = data.map(item => {
   
   const result = Object.assign(item, {
-    id: index + 1,
+    id: getIdOfPortfolioData(item),
     getOverview: getMarkdownFiles.getOverview.bind(null, item),
     getDescription: getMarkdownFiles.getDescription.bind(null, item),
     getContestInfoByString: contestInfoToString.bind(null, item),
