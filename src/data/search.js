@@ -46,9 +46,6 @@ const checkDataIsFit = (query, data) => {
 
 const search = (query, processFunc) => {
   return new Promise((resolve, reject) => {
-    // if division is empty string, search from all data
-
-    console.log(query);
 
     const result = Data.filter(item => {
       if (query.id !== null) return item.id == query.id;
@@ -61,8 +58,6 @@ const search = (query, processFunc) => {
 };
 
 const searchAPI = (rawQuery, processFunc) => {
-
-  console.log(rawQuery);
 
   const makeProperty = (value) => value !== undefined ? [...(value.split(' '))] : [ ];
 
