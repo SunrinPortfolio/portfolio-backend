@@ -191,10 +191,8 @@
     "teamName": "노예와 영남이들",
     "developers": ["김영남", "조재호", "김민석", "장교식", "이창현"],
     "contestInfo": {
-      "type": {
-        "main": 1,
-        "sub": 2
-      },
+      "type": 1,
+      "field": 4,
       "rate": 3
     },
     "qualification": [{
@@ -240,10 +238,8 @@
     "teamName": "2일 개발 오지구요",
     "developers": ["서준혁", "전현성", "조기훈", "이민승", "김학준"],
     "contestInfo": {
-      "type": {
-        "main": 1,
-        "sub": 2
-      },
+      "type": 1,
+      "field": 4,
       "rate": 3
     },
     "qualification": [{
@@ -289,10 +285,8 @@
     "teamName": "오르락내리락",
     "developers": ["장준영", "강명서", "최희영", "김은희", "이민우"],
     "contestInfo": {
-      "type": {
-        "main": 1,
-        "sub": 2
-      },
+      "type": 1,
+      "field": 4,
       "rate": 3
     },
     "qualification": [{
