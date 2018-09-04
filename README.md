@@ -66,7 +66,7 @@ division=software // 여러 옵션이 가능하지만, 현재 software 하나밖
 
 `type`(대회종류)에 넣을 수 있는 값: String
 
-값(int)          | 설명
+값(String)       | 설명
 ---------------- | ----------------------
 digital-contents | 디지털 콘텐츠 경진대회
 mobile-contents  | 모바일 콘텐츠 경진대회
@@ -76,7 +76,7 @@ sunrin-thon      | 선린 해커톤
 
 `field`(분야)에 넣을 수 있는 값: String
 
-값(int)     | 설명       | 디콘 | 모콘 | 선린톤
+값(String)  | 설명       | 디콘 | 모콘 | 선린톤
 -------     | ---------- | ---- | ---- | ------
 game        | 게임       | X    | O    | O
 life        | 생활       | X    | O    | O
