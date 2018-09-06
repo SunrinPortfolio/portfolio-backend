@@ -39,7 +39,7 @@ router.get('/list', (req, res) => {
   }).catch(err => {
     console.log(err);
 
-    res.status(500);
+    res.status(404);
     res.end();
   });
 });
@@ -61,7 +61,7 @@ router.get('/detail', (req, res) => {
     }).catch(err => {
       console.log(err);
 
-      res.status(500);
+      res.status(404);
       res.end();
     });
 });
@@ -83,7 +83,7 @@ router.get('/overview', (req, res) => {
     }).catch(err => {
       console.log(err);
 
-      res.status(500);
+      res.status(404);
       res.end();
     });
 });
@@ -105,7 +105,7 @@ router.get('/description', (req, res) => {
     }).catch(err => {
       console.log(err);
 
-      res.status(500);
+      res.status(404);
       res.end();
     });
 });
@@ -132,7 +132,7 @@ router.get('/image/:id/:image', (req, res) => {
     }).catch(err => {
       console.log(err);
 
-      res.status(500);
+      res.status(404);
       res.end();
     });
 });
