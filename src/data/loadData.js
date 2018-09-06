@@ -3,7 +3,7 @@ import getIdOfPortfolioData from './modules/getIdOfPortfolioData';
 import getMarkdownFiles from './modules/getMarkdownFiles';
 import processRawContestInfo from './modules/processRawContestInfo';
 
-import softwareData2016 from './../../data/software/2017.json';
+// import softwareData2016 from './../../data/software/2016.json';
 import softwareData2017 from './../../data/software/2017.json';
 
 const software = [
