@@ -9,14 +9,9 @@ loadData().then(data => {
 });
 
 const checkDataIsFit = (query, data) => {
-  if (query.division.length > 0) {
-    if (query.division.includes(data.division) === false) return false;
-  }
-
-  if (query.projectName !== '') {
-    if (data.projectName.indexOf(query.projectName) === -1) return false;
-  }
-
+  if (query.division.length > 0 && query.division.includes(data.division) === false) return false;
+  if (query.projectName !== '' && data.projectName.indexOf(query.projectName) === -1) return false;
+  
   if (query.developer.length > 0) {
     let flag = false;
     data.developers.forEach(dataDeveloper => {
@@ -27,20 +22,11 @@ const checkDataIsFit = (query, data) => {
 
     if (flag === false) return false;
   }
+  if (query.contestInfo.type.length > 0 && query.contestInfo.type.includes(data.contestInfo.type) === false) return false;
+  if (query.contestInfo.field.length > 0 && query.contestInfo.field.includes(data.contestInfo.field) === false) return false;
+  if (query.contestInfo.rate.length > 0 && query.contestInfo.rate.includes(String(data.contestInfo.rate)) === false) return false;
+  if (query.year.length > 0 && query.year.includes(String(data.year)) === false) return false;
 
-  if (query.contestInfo.type.length > 0) {
-    if (query.contestInfo.type.includes(data.contestInfo.type) === false) return false;
-  }
-  if (query.contestInfo.field.length > 0) {
-    if (query.contestInfo.field.includes(data.contestInfo.field) === false) return false;
-  }
-  if (query.contestInfo.rate.length > 0) {
-    if (query.contestInfo.rate.includes(String(data.contestInfo.rate)) === false) return false;
-  }
-
-  if (query.year.length > 0) {
-    if (query.year.includes(String(data.year)) === false) return false;
-  }
   return true;
 }
 
