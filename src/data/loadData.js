@@ -15,6 +15,8 @@ const portfolios = [
   ...software,
 ];
 
+const BRIEF_LENGTH = 100;
+
 const promises = portfolios.map(item => {
   const result = Object.assign(item, {
     id: getIdOfPortfolioData(item),
@@ -25,8 +27,8 @@ const promises = portfolios.map(item => {
 
   return result.getOverview().then(overview => {
     const brief = `${(
-      (overview.length > 200)
-        ? overview.slice(overview.indexOf(item.projectName) + item.projectName.length + 2, 200)
+      (overview.length > BRIEF_LENGTH)
+        ? overview.slice(overview.indexOf(item.projectName) + item.projectName.length + 2, BRIEF_LENGTH)
         : overview
       ).replace(/[#*/\\]/g, '').replace(/\s+/g, ' ').slice(1)}...`;
 
