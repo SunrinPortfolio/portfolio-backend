@@ -28,7 +28,7 @@ const promises = portfolios.map(item => {
   return result.getOverview().then(overview => {
     const brief = `${(
       (overview.length > BRIEF_LENGTH)
-        ? overview.slice(overview.indexOf(item.projectName) + item.projectName.length + 2, BRIEF_LENGTH)
+        ? overview.slice(overview.indexOf(item.projectName) + item.projectName.length, BRIEF_LENGTH)
         : overview
       ).replace(/[#*/\\]/g, '').replace(/\s+/g, ' ').slice(1)}...`;
 
