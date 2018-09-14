@@ -30,7 +30,7 @@ const promises = portfolios.map(item => {
       (overview.length > BRIEF_LENGTH)
         ? overview.slice(overview.indexOf(item.projectName) + item.projectName.length, BRIEF_LENGTH)
         : overview
-      ).replace(/[#*/\\]/g, '').replace(/\s+/g, ' ').slice(1)}...`;
+      ).replace(/[#*/-~\\]/g, '').replace(/\s+/g, ' ').slice(1)}...`;
 
     result.brief = brief;
 
@@ -42,7 +42,9 @@ const load = () => {
   return new Promise((resolve, reject) => {
     try {
       Promise.all(promises).then(data => resolve(data));
-    } catch (err) { reject(err) };
+    } catch (err) {
+      reject(err);
+    };
   });
 }
 
