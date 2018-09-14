@@ -7,9 +7,15 @@ import getProjectDataFileDirPath from '../../data/modules/getProjectDataFileDirP
 
 const router = express.Router();
 
+router.get('/*', (req, res, next) => {
 
-router.get('/list', (req, res) => {
+  // for CORS
   res.set({ 'Access-Control-Allow-Origin': '*' });
+
+  next();
+});
+
+router.get('/list', (req, res, next) => {
 
   const {
     division,
@@ -38,41 +44,36 @@ router.get('/list', (req, res) => {
     res.end();
   }).catch(err => {
     console.log(err);
-
-    res.status(404);
-    res.end();
+    next();
   });
 });
 
-router.get('/detail', (req, res) => {
-  res.set({ 'Access-Control-Allow-Origin': '*' });
+router.get('/detail', (req, res, next) => {
 
   const { id } = req.query;
 
   Search({ id })
     .then(data => {
-      if (data.length === 0) res.json({ });
-      else {
-        const result = data[0];
+      if (data.length === 0 || data.length > 1) { next(); }
 
-        res.json(result);
-      };
+      const result = data[0];
+
+      res.json(result);
       res.end();
     }).catch(err => {
       console.log(err);
-
-      res.status(404);
-      res.end();
+      next();
     });
 });
 
-router.get('/overview', (req, res) => {
-  res.set({ 'Access-Control-Allow-Origin': '*' });
+router.get('/overview', (req, res, next) => {
 
   const { id } = req.query;
 
   Search({ id })
     .then(data => {
+      if (data.length === 0 || data.length > 1) { next(); }
+
       const item = data[0];
 
       return item.getOverview();
@@ -82,19 +83,18 @@ router.get('/overview', (req, res) => {
       res.end();
     }).catch(err => {
       console.log(err);
-
-      res.status(404);
-      res.end();
+      next();
     });
 });
 
 router.get('/description', (req, res) => {
-  res.set({ 'Access-Control-Allow-Origin': '*' });
 
   const { id } = req.query;
 
   Search({ id })
     .then(data => {
+      if (data.length === 0 || data.length > 1) { next(); }
+
       const item = data[0];
 
       return item.getDescription();
@@ -104,22 +104,25 @@ router.get('/description', (req, res) => {
       res.end();
     }).catch(err => {
       console.log(err);
-
-      res.status(404);
-      res.end();
+      next();
     });
 });
 
-router.get('/image/:id/:image', (req, res) => {
-  res.set({ 'Access-Control-Allow-Origin': '*' });
+router.get('/image/:id/:image', (req, res, next) => {
 
   const { id, image } = req.params;
 
   Search({ id })
     .then(data => {
-      const item = data[0];
-
       return new Promise((resolve, reject) => {
+        if (data.length === 0) {
+          reject(`cannot found image${image} id of (${id})`);
+        } else if (data.length > 1) {
+          reject(`found more than one item by image${image} id of (${id})`);
+        }
+
+        const item = data[0];
+
         fs.readFile(`${getProjectDataFileDirPath(item)}/images/${image}`, (err, data) => {
           if (err) reject(err);
 
@@ -131,9 +134,7 @@ router.get('/image/:id/:image', (req, res) => {
       res.end(img, 'binary');
     }).catch(err => {
       console.log(err);
-
-      res.status(404);
-      res.end();
+      next();
     });
 });
 
