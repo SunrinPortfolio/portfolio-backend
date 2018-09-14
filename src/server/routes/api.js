@@ -25,6 +25,8 @@ router.get('/list', (req, res, next) => {
     field,
     rate,
     year,
+    page = 1,
+    itemperpage = 10,
   } = req.query;
 
   Search(
@@ -40,7 +42,15 @@ router.get('/list', (req, res, next) => {
       year,
     },
   ).then(data => {
-    res.json(data);
+    res.json({
+      total: data.length,
+      page: page,
+      itemPerPage: itemperpage,
+      list: data.slice(
+        (page - 1) * iteminpage,
+        (page * iteminpage) < data.length ? (page * iteminpage) : data.length
+      ),
+    });
     res.end();
   }).catch(err => {
     console.log(err);
