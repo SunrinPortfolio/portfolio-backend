@@ -20,7 +20,10 @@ ex)
 
 ```text
 /api/list/?
-division=software // 여러 옵션이 가능하지만, 현재 software 하나밖에 존재하지 않음
+page=1 // 1부터 시작하며, 요청할 페이지 번호를 나타냄 (기본 1)
+&itemperpage=10 // 한 페이지당 요청할 포트폴리오 개수 (기본 10)
+
+&division=software // 여러 옵션이 가능하지만, 현재 software 하나밖에 존재하지 않음
 &year=2016+2017 // 2016년과 2017년의 작품을 선택
 &type=digital-contents+sunrin-thon // 디지털 콘텐츠 경진대회나 선린 해커톤 대회의 작품들을 선택
 &field=game+life // 게임과 생활 분야의 작품들 선택
@@ -37,6 +40,11 @@ division=software // 여러 옵션이 가능하지만, 현재 software 하나밖
 ### 옵션
 
 기본적으로 옵션 미사용시 전체 데이터 반환
+
+#### `page`, `itemperpage`
+
+페이지별 요청에 필요.
+각각의 기본 값은 `page` 는 1, `itemperpage` 는 10으로 설정 되어 있음
 
 #### `division`
 
@@ -113,32 +121,42 @@ Response
 
 ```json
 {
-  "projectName": "작품명",
-  "teamName": "팀명",
-  "developers": ["홍길동", "철수", "영희"],
-  "contestInfo": {
-    "contest": "digital-contents",
-    "field": "game",
-    "rate": "1"
-  },
-  "qualification": [
+  "total": 15,
+  "page": 1,
+  "itemInPage": 10,
+  "list": [
     {
-      "title": "개발 환경",
-      "contents": [
+      "projectName": "작품명",
+      "teamName": "팀명",
+      "developers": ["홍길동", "철수", "영희"],
+      "contestInfo": {
+        "contest": "digital-contents",
+        "field": "game",
+        "rate": "1"
+      },
+      "qualification": [
         {
-          "title": "OS",
-          "contents": "Microsoft Windows 10"
+          "title": "개발 환경",
+          "contents": [
+            {
+              "title": "OS",
+              "contents": "Microsoft Windows 10"
+            },
+            {
+              "title": "플랫폼",
+              "contents": "Intel(R) Core(TM) i5-5257U CPU 2.70GHz / RAM 8G"
+            },
+            ...
+          ]
         },
-        {
-          "title": "플랫폼",
-          "contents": "Intel(R) Core(TM) i5-5257U CPU 2.70GHz / RAM 8G"
-        }
-      ]
-    }
-  ],
-  "year": 2017,
-  "division": "software",
-  "id": "id"
+        ...
+      ],
+      "year": 2017,
+      "division": "software",
+      "id": "id"
+    },
+    ...
+  ]
 }
 ```
 
