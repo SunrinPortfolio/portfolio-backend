@@ -121,9 +121,9 @@ Response
 
 ```json
 {
-  "total": 15,
-  "page": 1,
-  "itemInPage": 10,
+  "total": 15, // 요청 조건을 만족하는 데이터의 총 개수
+  "page": 1, // 현재 페이지
+  "itemPerPage": 10, // 한 페이지당 요소의 개수
   "list": [
     {
       "projectName": "작품명",
