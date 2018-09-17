@@ -41,8 +41,8 @@ router.get('/list', (req, res, next) => {
       page: page,
       itemPerPage: itemperpage,
       list: data.slice(
-        (page - 1) * iteminpage,
-        (page * iteminpage) < data.length ? (page * iteminpage) : data.length
+        (page - 1) * itemperpage,
+        (page * itemperpage) < data.length ? (page * itemperpage) : data.length
       ),
     });
     res.end();
@@ -95,7 +95,7 @@ router.get('/overview', (req, res, next) => {
     });
 });
 
-router.get('/description', (req, res) => {
+router.get('/description', (req, res, next) => {
 
   res.set({ 'Access-Control-Allow-Origin': '*' });
 
