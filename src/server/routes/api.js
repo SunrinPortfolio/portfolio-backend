@@ -7,15 +7,9 @@ import getProjectDataFileDirPath from '../../data/modules/getProjectDataFileDirP
 
 const router = express.Router();
 
-router.get('/*', (req, res, next) => {
-
-  // for CORS
-  res.set({ 'Access-Control-Allow-Origin': '*' });
-
-  next();
-});
-
 router.get('/list', (req, res, next) => {
+
+  res.set({ 'Access-Control-Allow-Origin': '*' });
 
   const {
     division,
@@ -60,6 +54,8 @@ router.get('/list', (req, res, next) => {
 
 router.get('/detail', (req, res, next) => {
 
+  res.set({ 'Access-Control-Allow-Origin': '*' });
+
   const { id } = req.query;
 
   Search({ id })
@@ -77,6 +73,8 @@ router.get('/detail', (req, res, next) => {
 });
 
 router.get('/overview', (req, res, next) => {
+
+  res.set({ 'Access-Control-Allow-Origin': '*' });
 
   const { id } = req.query;
 
@@ -99,6 +97,8 @@ router.get('/overview', (req, res, next) => {
 
 router.get('/description', (req, res) => {
 
+  res.set({ 'Access-Control-Allow-Origin': '*' });
+
   const { id } = req.query;
 
   Search({ id })
@@ -119,6 +119,8 @@ router.get('/description', (req, res) => {
 });
 
 router.get('/image/:id/:image', (req, res, next) => {
+
+  res.set({ 'Access-Control-Allow-Origin': '*' });
 
   const { id, image } = req.params;
 
