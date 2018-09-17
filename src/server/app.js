@@ -18,11 +18,6 @@ app.use(express.static(path.join(__dirname, './../../public')));
 
 app.use('/api/', apiRouter);
 
-app.use((err, req, res, next) => {
-  res.status(404); 
-  next();
-});
-
 const server = app.listen(port, () => {
   console.log('');
   console.log(`Listening on ${port}`);
